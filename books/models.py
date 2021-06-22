@@ -17,3 +17,6 @@ class Book(models.Model):
     description = models.CharField(max_length=1000)
     url = models.CharField(max_length=200)
     created_date = models.DateTimeField(default=timezone.now) 
+
+    def __str__(self):
+        return self.title
