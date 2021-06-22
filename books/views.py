@@ -6,5 +6,5 @@ from django.utils import timezone
 
 
 def book_list(request):
-    book = Book.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
-    return render(request, 'books/book_list.html', {'book': book})
+    books = Book.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
+    return render(request, 'books/book_list.html', {'books': books})
