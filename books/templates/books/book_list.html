@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<a href="{% url 'auth_logout' %}" class="">Logout</a>
     {% for book in books %}
         <article>
             <h2>{{ book.title }}</h2>

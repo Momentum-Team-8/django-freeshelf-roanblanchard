@@ -2,4 +2,15 @@
 
 {% block content %}
 <h1>Homepage</h1>
+<div class="flex-grow pa3 flex items-center">
+    {% if user.is_authenticated %}
+    <p>Hello, {{ user.username }}!</p>
+    <a href="{% url 'auth_logout' %}" class="">Logout</a>
+    <h2>Freeshelf: Free Coding Resources</h2>
+    <a href="{% url 'book_list' %}" class="">See coding resources</a>
+    {% else %}
+    <p>Please login to use Freeshelf</p>
+    <a href="{% url 'auth_login' %}" class="">Login</a>
+    {% endif %}
+</div>
 {% endblock content %} 
