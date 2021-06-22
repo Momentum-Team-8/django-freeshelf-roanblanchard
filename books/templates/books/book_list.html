@@ -4,7 +4,9 @@
     {% for book in books %}
         <article>
             <h2>{{ book.title }}</h2>
-            <p>{{ book.artist|linebreaksbr }}</p>
+            <p>{{ book.author|linebreaksbr }}</p>
+            <p><a href="{{book.url}}">{{ book.url|linebreaksbr }}</a></p>
+            <p>{{ book.description|linebreaksbr }}</p>
         </article>
     {% endfor %}
 {% endblock %}
