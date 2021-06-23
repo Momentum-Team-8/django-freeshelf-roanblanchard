@@ -16,7 +16,7 @@ class Book(models.Model):
     author = models.CharField(max_length=200)
     description = models.CharField(max_length=1000)
     url = models.CharField(max_length=200)
-    category = models.ManyToManyField("Category", related_name="books")
+    category = models.ManyToManyField("Category", blank=True)
     created_date = models.DateTimeField(default=timezone.now) 
 
     def __str__(self):
@@ -27,8 +27,6 @@ class Category(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=75)
 
-    def __repr__(self):
-        return f"<Genre name={self.name}>"
-
     def __str__(self):
         return self.name
+    
