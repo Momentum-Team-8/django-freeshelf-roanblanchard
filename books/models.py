@@ -20,3 +20,14 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Categorie(models.Model):
+    name = models.CharField(max_length=255)
+    slug = models.SlugField(max_length=75)
+
+    def __repr__(self):
+        return f"<Genre name={self.name}>"
+
+    def __str__(self):
+        return self.name
