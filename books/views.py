@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Book, Category
 from django.utils import timezone
+from django.shortcuts import render, get_object_or_404, redirect
 
 # Create your views here.
 
@@ -13,7 +14,7 @@ def book_list(request):
     return render(request, 'books/book_list.html', {'books': books})
 
 def show_category(request, slug):
-    category = get_object_or_404(Category, slug=slug)
-    books = category.albums.all()
+    categories = get_object_or_404(Category, slug=slug)
+    books = categories.books.all()
 
-    return render(request, "books/show_category.html", {"category": category, "books": books})
+    return render(request, "books/show_category.html", {"categories": categories, "books": books})

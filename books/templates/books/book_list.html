@@ -8,6 +8,11 @@
             <p>{{ book.author|linebreaksbr }}</p>
             <p><a href="{{book.url}}">{{ book.url|linebreaksbr }}</a></p>
             <p>{{ book.description|linebreaksbr }}</p>
+            <ul>
+                {% for category in book.category.all %}
+                <li><a href={% url 'show_category' slug=category.slug %}>{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
         </article>
     {% endfor %}
 {% endblock %}

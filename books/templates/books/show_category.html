@@ -3,9 +3,14 @@
 {% block content %}
 
 <h1> {{ category.name }} </h1>
-{% for book in books  %}
-    <p>{{ book.title }}</p>
-    <p>{{ book.author }}
+{%  for book in books%}
+    <h2>{{ book.title }}</h2>
+    <p>{{ book.author }}</p>
 {% endfor %}
 
+
+
 {% endblock content %}
+
+
+
