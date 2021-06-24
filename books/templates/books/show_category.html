@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<h1> {{ category.name }} </h1>
+<a href="{% url 'book_list' %}" class=""> ⬅️ Go back</a>
+<h1> {{ categories.name }} </h1>
+<hr>
 {%  for book in books%}
     <h2>{{ book.title }}</h2>
     <p>{{ book.author }}</p>
